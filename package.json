@@ -1,0 +1,15 @@
+{
+  "name": "python_pong",
+  "version": "1.0.0",
+  "description": "Pong Scoreboard web application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Pong",
+    "Scoreboard"
+  ],
+  "author": "vimm0",
+  "license": "MIT"
+}

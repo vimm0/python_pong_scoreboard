@@ -1,0 +1,129 @@
+/*Text*/
+h1 {
+    text-align: center;
+}
+
+#container {
+    border-style: solid;
+    height: 350px;
+    width: 95%;
+    padding: 30px;
+    position: relative;
+}
+
+.boxL {
+    border-style: dotted;
+    height: 250px;
+    width: 600px;
+    padding: 10px;
+    position: absolute;
+}
+
+.boxR {
+    text-align: center;
+    border-style: dotted;
+    height: 250px;
+    width: 600px;
+    padding: 10px;
+    top: 29px;
+    right: 25px;
+    position: absolute
+}
+
+#showL {
+    bottom: -10%;
+    text-align: center;
+    font-size: 50px;
+    height: 150;
+    width: 600px;
+    position: absolute
+}
+
+#showR {
+    bottom: -10%;
+    font-size: 50px;
+    height: 150;
+    width: 600px;
+    position: absolute
+}
+
+#buttonController {
+    position: relative;
+    bottom:-25%;
+}
+
+#btn2 {
+    position: absolute;
+    right:0%;
+}
+
+/*arrow*/
+#arrowL {
+    float: left;
+    margin: 0.5%;
+    position: relative;
+    visibility: hidden;
+}
+
+#arrowR {
+    float: left;
+    margin: 0.5%;
+    position: relative;
+    visibility: hidden;
+}
+
+/*left pointing*/
+.left {
+    width: 0;
+    height: 0;
+    padding-top: 10%;
+    padding-bottom: 5%;
+    padding-left: 5%;
+    overflow: hidden;
+}
+
+.left:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    margin-top: -500px;
+    margin-left: -500px;
+    border-top: 500px solid transparent;
+    border-bottom: 500px solid transparent;
+    border-left: 500px solid #4679BD;
+}
+
+/*right pointing*/
+.right {
+    width: 5%;
+    height: 0;
+    padding-top: 10%;
+    padding-bottom: 5%;
+    padding-left: 88%;
+    overflow: hidden;
+}
+
+.right:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    margin-top: -500px;
+    border-top: 500px solid transparent;
+    border-bottom: 500px solid transparent;
+    border-right: 500px solid #4679BD;
+}
+
+#option {
+    text-align: center;
+    margin: 5px
+}
+
+#status{
+
+    text-align:center;
+}
+#activeL{
+text-align:center;
+}

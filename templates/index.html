@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3 id="head" class="text-center">Table Tennis Score Board</h3>
+<!--ARROW-->
+<p class="text-center">{{today}}</p>
+<div class="container">
+  <div id='row' class="row" >
+    <div id="left" class="col-md-6 border arrow">
+      <p id="active-left" class="show-player">{{alpha}}</p>
+      {% if alpha.serve == True %}
+        <div class="triangle"></div>
+        {%else%}
+        <div class="static"></div>
+        {%endif%}
+        <p id="left" class="show-score">{{match.player_one_score}}</p>
+        <p id="left" class="show-status">{{match.player_one_status}}</p>
+      </div>
+      <div id="right" class="col-md-6 border arrow">
+        <p id="active-right" class="show-player" >{{tango}}</p>
+        {% if alpha.serve == False%}
+          <div class="triangle"></div>
+          {%else%}
+          <div class="static"></div>
+          {%endif%}
+          <p id="right" class="show-score">{{match.player_two_score}}</p>
+          <p id="right" class="show-status">{{match.player_two_status}}</p>
+        </div>
+      </div>
+    </div>
+    <!-- <p class="text-center" id='status'>{{alpha.status}}</p> -->
+    <div class="row text-center">
+      <form method='POST'>
+        {% csrf_token %}
+        {%if match.player_one_status == "wins" or match.player_two_status == "wins" %}
+        <input class="btn btn-default" type="submit" value="New Game" name="new_game" disabled>
+        <input class="btn btn-default" type="submit" value="Player One" name="left"  disabled>
+        <input class="btn btn-default" type="submit" value="Player Two" name="right"  disabled>
+      {% else %}
+        <input class="btn btn-default" type="submit" value="New Game" name="new_game" />
+        <input class="btn btn-default" type="submit" value="Player One" name="left" />
+        <input class="btn btn-default" type="submit" value="Player Two" name="right" />
+      {% endif %}
+      <input class="btn btn-default" type="submit" value="Clear" name="clear"   />
+    </form>
+  </div>
+  <h3>How To Player:</h3>
+  <ol>
+    <li>Tap on the button to increase the count.</li>
+    <li>Blue triangle denotes serving side.</li>
+  </ol>
+</div>
+{% endblock content %}
